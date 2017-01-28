@@ -17,7 +17,7 @@
         android:layout_height="match_parent">
 
         <Button
-            android:text="Button"
+            android:text="Greeting"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/button" />
@@ -30,6 +30,11 @@
             android:id="@+id/textView"
             />
 
+        <Button
+            android:text="TimePicker"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/button_timepicker" />
 
     </LinearLayout>
 

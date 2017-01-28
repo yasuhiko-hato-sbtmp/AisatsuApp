@@ -27,6 +27,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         TextView textView = (TextView)findViewById(R.id.textView);
         mTextView = textView;
 
+        Button button_timepicker = (Button) findViewById(R.id.button_timepicker);
+        button_timepicker.setOnClickListener(this);
+
         showTimePickerDialog();
     }
 
@@ -34,6 +37,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         if (v.getId() == R.id.button) {
             setTimeToTextView();
+        }
+        else if(v.getId() == R.id.button_timepicker){
+            showTimePickerDialog();
         }
     }
 
@@ -61,16 +67,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         String salute = new String("Good bye");
 
         if(hour >= 2 && hour < 10){
-            salute = "Good morning";
+            salute = "おはよう";
         }
         else if(hour >= 10 && hour < 18){
-            salute = "Hello";
+            salute = "こんにちは";
         }
         else if(hour >= 18 && hour < 24){
-            salute = "Good evening";
+            salute = "こんばんは";
         }
         else if(hour >= 0 && hour < 2){
-            salute = "Good evening";
+            salute = "こんばんは";
         }
 
         mTextView.setText(salute);
