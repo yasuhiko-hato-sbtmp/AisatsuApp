@@ -30,6 +30,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Button button_timepicker = (Button) findViewById(R.id.button_timepicker);
         button_timepicker.setOnClickListener(this);
 
+        Button button_clear = (Button) findViewById(R.id.button_clear);
+        button_clear.setOnClickListener(this);
+
+        mTimePicker = (TimePicker)findViewById(R.id.timePicker);
+
         showTimePickerDialog();
     }
 
@@ -40,6 +45,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
         else if(v.getId() == R.id.button_timepicker){
             showTimePickerDialog();
+        }
+        else if(v.getId() == R.id.button_clear){
+            clearTimePicker();
         }
     }
 
@@ -80,5 +88,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         mTextView.setText(salute);
+    }
+
+    private void clearTimePicker(){
+        Log.d("initTimePicker", "Called initTimePicker()");
+        mHour = 0;
+        mMinute = 0;
+        mTimePicker.setCurrentHour(mHour);
+        mTimePicker.setCurrentMinute(mMinute);
     }
 }
